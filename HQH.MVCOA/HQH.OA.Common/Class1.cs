@@ -8,5 +8,6 @@ namespace HQH.OA.Common
 {
     public class Class1
     {
+        //1212
     }
 }
