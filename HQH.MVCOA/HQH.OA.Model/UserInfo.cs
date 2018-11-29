@@ -7,14 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HQH.OA.DAL
+namespace HQH.OA.Model
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Custom
+    public partial class UserInfo
     {
+        public UserInfo()
+        {
+            this.OrderInfoes = new HashSet<OrderInfo>();
+        }
+    
         public int Id { get; set; }
         public string UName { get; set; }
+    
+        public virtual ICollection<OrderInfo> OrderInfoes { get; set; }
     }
 }

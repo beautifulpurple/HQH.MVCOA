@@ -4,9 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="eb63543483b5474b89e99519f554f4f3" Name="Diagram1" >
-        <EntityTypeShape EntityType="DataModel.Custom" Width="1.5" PointX="1.5" PointY="3.375" />
-        <EntityTypeShape EntityType="DataModel.OrderInfo" Width="1.5" PointX="7.25" PointY="3.375" />
+      <Diagram DiagramId="19fc5687806945eebce756e13ddb8fe4" Name="Diagram1" >
+        <EntityTypeShape EntityType="DataModel.OrderInfo" Width="1.5" PointX="7.125" PointY="2.375" />
+        <EntityTypeShape EntityType="DataModel.UserInfo" Width="1.5" PointX="3.375" PointY="4.875" />
+        <AssociationConnector Association="DataModel.UsreInfoOrderInfo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
