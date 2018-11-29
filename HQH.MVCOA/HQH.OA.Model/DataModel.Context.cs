@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HQH.OA.DAL
+namespace HQH.OA.Model
 {
     using System;
     using System.Data.Entity;
@@ -25,7 +25,7 @@ namespace HQH.OA.DAL
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Custom> Custom { get; set; }
-        public virtual DbSet<OrderInfo> OrderInfoe { get; set; }
+        public virtual DbSet<OrderInfo> OrderInfoes { get; set; }
+        public virtual DbSet<UserInfo> UserInfoes { get; set; }
     }
 }

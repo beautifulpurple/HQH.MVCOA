@@ -60,6 +60,7 @@ ipch/
 *.vspx
 .vs
 .csproj
+.sln
 
 # Guidance Automation Toolkit
 *.gpState
