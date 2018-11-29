@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{100B49BF-5363-4E5C-966F-9B9F53B5994D}</ProjectGuid>
+    <ProjectGuid>{ADD82CBA-B051-4DF0-8B3B-F55E03A79951}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HQH.OA.DAL</RootNamespace>
