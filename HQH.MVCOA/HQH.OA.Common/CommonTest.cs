@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace HQH.OA.Common
 {
+    /// <summary>
+    /// ss
+    /// </summary>
     class CommonTest
     {
         //这是一个测试文件
