@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace HQH.OA.Common
 {
-    public class Class1
+    public class Class2
     {
-        //1212
-        //121212
-        //这是是develop分支
     }
 }
