@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace HQH.OA.Common
 {
-    class CommonTest
+    class twoba
     {
-        //这是一个测试文件
-        //two test in develop branch
+
     }
 }
