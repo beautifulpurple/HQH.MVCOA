@@ -13,20 +13,23 @@ namespace HQH.OA.DAL
     /// 用泛型类封装基本的CURD 分页
     /// </summary>
     /// <typeparam name="T"></typeparam>
+    /// 老师说不用继承IBaseDal  其实我感觉还是继承好点 先不继承了  之后再好好理解理解
     public class BaseDal<T> where T : class,new()//解释：T冒号后面是用来约束T是一个类 并且有一个默认构造函数
     {
+        //这里为什么可以用DbContext作为返回值 因为dal层用到的所有方法都是DbContext的 
+        //    用父类作为返回值  这也是面向抽象编程的一种应用  在实际开发中要注意体会
+        public DbContext Db
+        {
+            get { return DbContextFactory.GetCurrentDbContext(); }
+        }
         /// <summary>
-        /// 声明上下文
-        /// </summary>
-        private DataModelContainer context = new DataModelContainer();
-        /// <summary>
-        /// 根据条件得到实体集 其实已经包含前两种情况了
+        /// 查询
         /// </summary>
         /// <param name="express"></param>
         /// <returns></returns>
-        public IQueryable<T> GetentityByWhere(Expression<Func<T, bool>> express)
+        public IQueryable<T> Get(Expression<Func<T, bool>> express)
         {
-            return context.Set<T>().Where(express);
+            return Db.Set<T>().Where(express);
         }
         /// <summary>
         /// 增加   如果主键是自动增长的  增加到数据库中后  会返回一个给主键付了值的实体
@@ -35,8 +38,8 @@ namespace HQH.OA.DAL
         /// <returns></returns>
         public T Add(T entity)
         {
-            context.Set<T>().Add(entity);
-            context.SaveChanges();
+            Db.Set<T>().Add(entity);
+            Db.SaveChanges();
             return entity;
         }
         /// <summary>
@@ -46,8 +49,8 @@ namespace HQH.OA.DAL
         /// <returns></returns>
         public bool Update(T entity)
         {
-            context.Entry(entity).State = EntityState.Modified;
-            return context.SaveChanges() > 0;
+            Db.Entry(entity).State = EntityState.Modified;
+            return Db.SaveChanges() > 0;
         }
         /// <summary>
         /// 删除
@@ -56,8 +59,8 @@ namespace HQH.OA.DAL
         /// <returns></returns>
         public bool Delete(T entity)
         {
-            context.Entry(entity).State = EntityState.Deleted;
-            return context.SaveChanges() > 0;
+            Db.Entry(entity).State = EntityState.Deleted;
+            return Db.SaveChanges() > 0;
         }
         /// <summary>
         /// 分页  泛型方法
@@ -76,10 +79,10 @@ namespace HQH.OA.DAL
         public IQueryable<T> PageIndex<TS>(int pageIndex, int pageSize, out int total, Expression<Func<T, bool>> expressionWhere,
             Expression<Func<T, TS>> expressionOrderBy, bool isAsc)
         {
-            total = context.Set<T>().Count();
+            total = Db.Set<T>().Count();
             if (isAsc)
             {
-                return context.Set<T>()
+                return Db.Set<T>()
                     .OrderBy(expressionOrderBy)
                     .Where(expressionWhere)
                     .Skip(pageSize * (pageIndex - 1))
@@ -87,7 +90,7 @@ namespace HQH.OA.DAL
             }
             else
             {
-                return context.Set<T>()
+                return Db.Set<T>()
                    .OrderByDescending(expressionOrderBy)
                    .Where(expressionWhere)
                    .Skip(pageSize * (pageIndex - 1))
