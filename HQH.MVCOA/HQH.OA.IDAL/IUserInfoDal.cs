@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HQH.OA.Model;
 
-namespace HQH.OA.BLL
+namespace HQH.OA.IDAL
 {
-    public class Class1
+    public interface IUserInfoDal: IBaseDal<UserInfo>
     {
     }
 }
