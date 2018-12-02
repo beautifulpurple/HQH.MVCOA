@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using HQH.OA.Model;
@@ -17,7 +18,13 @@ namespace HQH.OA.DAL
         //    用父类作为返回值  这也是面向抽象编程的一种应用  在实际开发中要注意体会
         public static DbContext GetCurrentDbContext()
         {
-            return new DataModelContainer();
+            DbContext dbContext = CallContext.GetData("DbContext") as DbContext;
+            if (dbContext == null)
+            {
+                dbContext = new DataModelContainer();
+                CallContext.SetData("DbContext", dbContext);
+            }
+            return dbContext;
         }
     }
 }

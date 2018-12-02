@@ -47,7 +47,7 @@ namespace HQH.OA.IDAL
         /// <param name="expressionOrderBy"></param>
         /// <param name="isAsc">升序还是降序</param>
         /// <returns></returns>
-        IQueryable<T> PageIndex<TS>(int pageIndex, int pageSize, out int total,
+        IQueryable<T> GetPageEntities<TS>(int pageIndex, int pageSize, out int total,
            Expression<Func<T, bool>> expressionWhere,
            Expression<Func<T, TS>> expressionOrderBy, bool isAsc);
     }

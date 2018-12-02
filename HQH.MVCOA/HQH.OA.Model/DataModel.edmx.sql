@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 11/29/2018 21:20:09
--- Generated from EDMX file: D:\视频教学\MVC\MVCOA-again\MVCOA-Project\HQH.MVCOA\HQH.OA.Model\DataModel.edmx
+-- Date Created: 12/01/2018 22:42:19
+-- Generated from EDMX file: E:\IT精英\实践\自学程序各种笔记\MVCOAProject-again\MVCOAPorject\HQH.MVCOA\HQH.OA.Model\DataModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -28,8 +28,8 @@ GO
 IF OBJECT_ID(N'[dbo].[OrderInfoes]', 'U') IS NOT NULL
     DROP TABLE [dbo].[OrderInfoes];
 GO
-IF OBJECT_ID(N'[dbo].[UsreInfoes]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UsreInfoes];
+IF OBJECT_ID(N'[dbo].[UserInfoes]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserInfoes];
 GO
 
 -- --------------------------------------------------
@@ -79,6 +79,7 @@ ADD CONSTRAINT [FK_UsreInfoOrderInfo]
     REFERENCES [dbo].[UserInfoes]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UsreInfoOrderInfo'
 CREATE INDEX [IX_FK_UsreInfoOrderInfo]

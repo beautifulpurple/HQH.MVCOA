@@ -61,6 +61,8 @@ ipch/
 .vs
 .csproj
 .sln
+.pdb
+.exe
 
 # Guidance Automation Toolkit
 *.gpState
