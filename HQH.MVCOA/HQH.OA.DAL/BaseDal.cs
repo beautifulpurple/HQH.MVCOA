@@ -39,7 +39,7 @@ namespace HQH.OA.DAL
         public T Add(T entity)
         {
             Db.Set<T>().Add(entity);
-            Db.SaveChanges();
+            //Db.SaveChanges();
             return entity;
         }
         /// <summary>
@@ -50,7 +50,8 @@ namespace HQH.OA.DAL
         public bool Update(T entity)
         {
             Db.Entry(entity).State = EntityState.Modified;
-            return Db.SaveChanges() > 0;
+            //return Db.SaveChanges() > 0;
+            return true;
         }
         /// <summary>
         /// 删除
@@ -60,7 +61,8 @@ namespace HQH.OA.DAL
         public bool Delete(T entity)
         {
             Db.Entry(entity).State = EntityState.Deleted;
-            return Db.SaveChanges() > 0;
+            //return Db.SaveChanges() > 0;
+            return true;
         }
         /// <summary>
         /// 分页  泛型方法
@@ -76,7 +78,7 @@ namespace HQH.OA.DAL
         /// <param name="expressionOrderBy"></param>
         /// <param name="isAsc">升序还是降序</param>
         /// <returns></returns>
-        public IQueryable<T> PageIndex<TS>(int pageIndex, int pageSize, out int total, Expression<Func<T, bool>> expressionWhere,
+        public IQueryable<T> GetPageEntities<TS>(int pageIndex, int pageSize, out int total, Expression<Func<T, bool>> expressionWhere,
             Expression<Func<T, TS>> expressionOrderBy, bool isAsc)
         {
             total = Db.Set<T>().Count();

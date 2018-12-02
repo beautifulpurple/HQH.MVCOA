@@ -5,6 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using HQH.OA.IDAL;
 using HQH.OA.Model;
 
 namespace HQH.OA.DAL
@@ -12,7 +13,7 @@ namespace HQH.OA.DAL
     /// <summary>
     /// 对UserInfo实体的CRUD封装
     /// </summary>
-    public class UserInfoDal : BaseDal<UserInfo>
+    public class UserInfoDal : BaseDal<UserInfo>, IUserInfoDal
     {
         ///// <summary>
         ///// 声明上下文
@@ -89,7 +90,7 @@ namespace HQH.OA.DAL
         ///// <param name="expressionOrderBy"></param>
         ///// <param name="isAsc">升序还是降序</param>
         ///// <returns></returns>
-        //public IQueryable<UserInfo> PageIndex<TS>(int pageIndex, int pageSize, out int total, Expression<Func<UserInfo, bool>> expressionWhere, Expression<Func<UserInfo, TS>> expressionOrderBy, bool isAsc)
+        //public IQueryable<UserInfo> GetPageEntities<TS>(int pageIndex, int pageSize, out int total, Expression<Func<UserInfo, bool>> expressionWhere, Expression<Func<UserInfo, TS>> expressionOrderBy, bool isAsc)
         //{
         //    total = context.UserInfoes.Count();
         //    if (isAsc)

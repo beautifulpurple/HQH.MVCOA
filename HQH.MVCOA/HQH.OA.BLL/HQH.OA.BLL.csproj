@@ -39,13 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
+    <Compile Include="OrderInfoService.cs" />
     <Compile Include="UserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HQH.OA.DalFactory\HQH.OA.DalFactory.csproj">
+      <Project>{897e76a7-33ef-49fd-a773-cf7d2c2952fc}</Project>
+      <Name>HQH.OA.DalFactory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HQH.OA.DAL\HQH.OA.DAL.csproj">
       <Project>{ADD82CBA-B051-4DF0-8B3B-F55E03A79951}</Project>
       <Name>HQH.OA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HQH.OA.IBLL\HQH.OA.IBLL.csproj">
+      <Project>{64348DEB-D94A-4EAA-A3E9-9B565740CC40}</Project>
+      <Name>HQH.OA.IBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\HQH.OA.IDAL\HQH.OA.IDAL.csproj">
       <Project>{92A7DE19-FF01-4DCB-8649-70133533A7C7}</Project>
@@ -54,10 +64,6 @@
     <ProjectReference Include="..\HQH.OA.Model\HQH.OA.Model.csproj">
       <Project>{9D6215CB-8801-4604-9075-5A2F735253DA}</Project>
       <Name>HQH.OA.Model</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HQH.OA.StaticDalFactory\HQH.OA.StaticDalFactory.csproj">
-      <Project>{e0034a75-3ab1-4b16-8c1e-add1eb1154d7}</Project>
-      <Name>HQH.OA.StaticDalFactory</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
