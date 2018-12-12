@@ -12,6 +12,7 @@ namespace SpringNetDemoOne
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             IApplicationContext ctx = ContextRegistry.GetContext();
             IUserInfo userinfo;
             userinfo = (IUserInfo)ctx.GetObject("UserInfo");
@@ -21,6 +22,10 @@ namespace SpringNetDemoOne
             userinfo = (IUserInfo)ctx.GetObject("NHUserInfo");
             userinfo.Show();
             Console.ReadKey();
+=======
+            //测试 git 用户名问题1231212112221212121121521
+>>>>>>> 0cbf7dfc0a1c63f7d12aca7f8322a600593e67b1
         }
-    } 
+    }
+}
  
