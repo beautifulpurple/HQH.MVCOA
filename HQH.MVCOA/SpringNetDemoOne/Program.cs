@@ -14,13 +14,14 @@ namespace SpringNetDemoOne
         {
             IApplicationContext ctx = ContextRegistry.GetContext();
             IUserInfo userinfo;
-            userinfo = (IUserInfo)ctx.GetObject("UserInfo");
+            userinfo = (IUserInfo) ctx.GetObject("UserInfo");
             userinfo.Show();
-            userinfo = (IUserInfo)ctx.GetObject("EFUserInfo");
+            userinfo = (IUserInfo) ctx.GetObject("EFUserInfo");
             userinfo.Show();
-            userinfo = (IUserInfo)ctx.GetObject("NHUserInfo");
+            userinfo = (IUserInfo) ctx.GetObject("NHUserInfo");
             userinfo.Show();
             Console.ReadKey();
         }
-    } 
+    }
+}
  
