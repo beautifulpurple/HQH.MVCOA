@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.net
+		http://www.springframework.net/xsd/spring-objects.xsd">
+  <object name="EFUserInfo" type="SpringNetDemoOne.EFUserInfo,SpringNetDemoOne">
+    <constructor-arg index="0" value="构造函数参数"/> <!--构造方法注入  给构造函数的第0个参数赋值-->
+  </object>
+  <object name="NHUserInfo" type="SpringNetDemoOne.NHUserInfo,SpringNetDemoOne">
+    <property name="Name" value="小明"/>  <!--简单属性注入-->
+    <property name="EFUserInfo" ref="EFUserInfo"/>   <!--复杂属性注入-->
+  </object>
+</objects>

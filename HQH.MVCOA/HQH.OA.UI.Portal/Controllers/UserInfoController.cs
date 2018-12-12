@@ -11,11 +11,12 @@ namespace HQH.OA.UI.Portal.Controllers
 {
     public class UserInfoController : Controller
     {
-        IUserInfoService userInfoService = new UserInfoService();
+        //IUserInfoService UserInfoService = new UserInfoService();
+        private IUserInfoService UserInfoService { get; set; }
         // GET: UserInfo
         public ActionResult Index()
         {
-            ViewData.Model = userInfoService.Get(u=>true);
+            ViewData.Model = UserInfoService.Get(u=>true);
             return View();
         }
 
@@ -40,7 +41,7 @@ namespace HQH.OA.UI.Portal.Controllers
                 // TODO: Add insert logic here
                 if (ModelState.IsValid)
                 {
-                    userInfoService.Add(userInfo);
+                    UserInfoService.Add(userInfo);
                     return RedirectToAction("Index");
                 }
                 return View(userInfo);

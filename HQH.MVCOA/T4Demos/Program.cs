@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HQH.OA.Model;
 
-namespace HQH.OA.IDAL
+namespace T4Demos
 {
-    public partial interface IUserInfoDal : IBaseDal<UserInfo>
+    class Program
     {
+        static void Main(string[] args)
+        {
+        }
     }
 }

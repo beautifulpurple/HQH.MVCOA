@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using HQH.OA.Model;
 
-namespace HQH.OA.IDAL
+namespace SpringNetDemoOne
 {
-    public partial interface IUserInfoDal : IBaseDal<UserInfo>
+    public interface IUserInfo
     {
+        void Show();
     }
 }

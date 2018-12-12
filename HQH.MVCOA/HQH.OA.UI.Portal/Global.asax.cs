@@ -6,10 +6,11 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Spring.Web.Mvc;
 
 namespace HQH.OA.UI.Portal
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication :SpringMvcApplication  // System.Web.HttpApplication
     {
         protected void Application_Start()
         {
