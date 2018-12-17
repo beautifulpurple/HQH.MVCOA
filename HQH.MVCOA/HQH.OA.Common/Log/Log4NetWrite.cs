@@ -13,7 +13,8 @@ namespace HQH.OA.Common.Log
     {
         public void WriteLogInfo(string message)
         {
-
+            Log4NetFactory.SetSystemLogger(message);
+            //Log4NetFactory.GetLogger("错误").Error(message);
         }
     }
 }

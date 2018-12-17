@@ -11,20 +11,21 @@ namespace HQH.OA.Common.Log
     {
         /// <summary>
         ///  静态只读实体对象error信息  只用来处理全局异常过滤器中配置的异常处理
+        /// 获取配置中logger的name为systemlogerror的配置
         /// </summary>
         public static readonly log4net.ILog LogSystemError = log4net.LogManager.GetLogger("systemlogerror");
         /// <summary>
-        /// 添加异常信息
+        /// 处理全局异常过滤器中的信息
         /// </summary>
         /// <param name="message">自定义日志内容说明</param>
         /// <param name="ex">异常信息</param>
-        public static void WriteLog(string message, Exception ex)
+        public static void SetSystemError(object ex)
         {
             try
             {
                 if (LogSystemError.IsErrorEnabled)
                 {
-                    LogSystemError.Error(message, ex);
+                    LogSystemError.Error(ex);
                 }
             }
             catch { }

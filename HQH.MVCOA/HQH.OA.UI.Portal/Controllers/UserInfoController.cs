@@ -16,6 +16,7 @@ namespace HQH.OA.UI.Portal.Controllers
         // GET: UserInfo
         public ActionResult Index()
         {
+            throw new Exception();
             ViewData.Model = UserInfoService.Get(u=>true);
             return View();
         }

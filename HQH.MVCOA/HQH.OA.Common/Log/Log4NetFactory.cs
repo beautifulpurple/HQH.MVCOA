@@ -9,7 +9,7 @@ using System.Web;
 
 namespace HQH.OA.Common.Log
 {
-    class Log4NetFactory
+    public class Log4NetFactory
     {
         static Log4NetFactory()
         {
@@ -24,6 +24,15 @@ namespace HQH.OA.Common.Log
         {
             return new Log4NetHelper(LogManager.GetLogger(str));
         }
-        //public static void 
+        /// <summary>
+        /// 专门用来处理全局异常过滤器中的异常信息
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="ex"></param>
+        public static void SetSystemLogger(object ex)
+        {
+            Log4NetHelper.SetSystemError(ex);
+        }
+
     }
 }

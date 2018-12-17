@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using HQH.OA.UI.Portal.Models;
 
 namespace HQH.OA.UI.Portal
 {
@@ -7,7 +8,8 @@ namespace HQH.OA.UI.Portal
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            //filters.Add(new HandleErrorAttribute());
+            filters.Add(new MyExctptionFilterAttribute());
         }
     }
 }

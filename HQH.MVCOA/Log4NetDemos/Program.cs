@@ -13,6 +13,7 @@ namespace Log4NetDemos
         {
             //https://www.cnblogs.com/vichin/p/6022612.html
             //https://www.cnblogs.com/lsgsanxiao/p/5845300.html
+            //https://www.cnblogs.com/wohenxinwei/p/3912528.html
 
             //初始化日志文件 
             string state = ConfigurationManager.AppSettings["IsWriteLog"];
