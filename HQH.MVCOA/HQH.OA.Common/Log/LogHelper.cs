@@ -23,12 +23,18 @@ namespace HQH.OA.Common.Log
                 {
                     lock (ExceptionStringQueue)
                     {
-                        string str = ExceptionStringQueue.Dequeue();
-                        foreach (var item in LogWriteList)
+                        if (ExceptionStringQueue.Any())//有数据再操作
                         {
-                            item.WriteLogInfo(str);
+                            string str = ExceptionStringQueue.Dequeue();
+                            foreach (var item in LogWriteList)
+                            {
+                                item.WriteLogInfo(str);
+                            }
                         }
-
+                        else
+                        {
+                            Thread.Sleep(30);
+                        }
                     }
                 }
             });

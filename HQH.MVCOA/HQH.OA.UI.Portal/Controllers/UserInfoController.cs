@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using HQH.OA.Common.Log;
 
 namespace HQH.OA.UI.Portal.Controllers
 {
@@ -16,7 +17,10 @@ namespace HQH.OA.UI.Portal.Controllers
         // GET: UserInfo
         public ActionResult Index()
         {
+            Log4NetFactory.GetLogger(typeof(UserInfoController)).Error("测试zidingyi错误");
+
             throw new Exception();
+            //Log4NetFactory.SetSystemLogger("测试系统异常");
             ViewData.Model = UserInfoService.Get(u=>true);
             return View();
         }
